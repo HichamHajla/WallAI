@@ -28,7 +28,7 @@ const Home = () => {
     const fetchPosts = async () => {
       setLoading(true);
       try {
-        const response = await axios.get('http://localhost:8080/api/post', {
+        const response = await axios.get('https://wall-ai.fly.dev/api/post', {
           headers: {
             'Content-Type': 'application/json'
           }
