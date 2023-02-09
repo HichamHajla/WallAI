@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom'
 const Landing = () => {
   return (
     <>
-      <section className="max-w-7xl mx-auto text-center">
+      <section className="max-w-7xl mx-auto text-center ">
         <div className="flex flex-col mt-40">
-          <h1 className='font-extrabold text-[#222328] text-[64px]'>Welcome to the</h1>
-          <img className="mt-16 mr-4" src={logo} alt="logo"/>
+          <h1 className='font-extrabold text-[#222328] text-[60px]'>Welcome to the</h1>
+          <img className="mt-16 m-auto text-center" style={{width:"700px"}} src={logo} alt="logo"/>
         </div>
-        <div className="flex flex-col items-center mb-32">
+        <div className="flex flex-col items-center mt-12 mb-32">
             <Link to="/login" className="mt-16 text-white bg-[#6469ff] font-medium rounded-md text-xl h-14 w-80 px-5 py-3.5 text-center">
                 Log In
             </Link>

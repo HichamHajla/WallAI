@@ -28,7 +28,7 @@ const Home = () => {
     const fetchPosts = async () => {
       setLoading(true);
       try {
-        const response = await axios.get('http://localhost:8080/api/post?limit=5', {
+        const response = await axios.get('http://localhost:8080/api/post', {
           headers: {
             'Content-Type': 'application/json'
           }
