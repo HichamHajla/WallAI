@@ -6,6 +6,7 @@ import Loader from "../components/Loader";
 import { getRandomPrompt } from "../utils";
 import jwt_decode from "jwt-decode";
 
+
 const CreatePost = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({
@@ -160,4 +161,4 @@ const CreatePost = () => {
   );
 }
 
-export default CreatePost;
+export default CreatePost

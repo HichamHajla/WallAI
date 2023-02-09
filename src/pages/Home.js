@@ -3,6 +3,7 @@ import Loader from '../components/Loader'
 import Card from '../components/Card'
 import FormField from '../components/FormField'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 
 
@@ -27,20 +28,16 @@ const Home = () => {
     const fetchPosts = async () => {
       setLoading(true);
       try {
-        const response = await fetch('http://localhost:8080/api/post',{
-        method:'GET',
-        headers:{
-          'Content-Type':'application/json',
-        },
-      })
-      if(response.ok) {
-        const result = await response.json();
-        setAllPosts(result.data.reverse());
-    }
+        const response = await axios.get('http://localhost:8080/api/post?limit=5', {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+        setAllPosts(response.data.data.reverse());
       } catch (error) {
         alert(error)
       } finally {
-      setLoading(false)
+        setLoading(false)
       }
     }
 

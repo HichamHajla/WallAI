@@ -6,6 +6,7 @@ import Loader from "../components/Loader";
 import axios from "axios";
 
 
+
 const PostDetails = () => {
     const navigate = useNavigate();
     const details = JSON.parse(localStorage.getItem('details')) || {};

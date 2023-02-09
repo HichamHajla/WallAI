@@ -1,5 +1,5 @@
 import axios from 'axios'
-import newUser from "../pages/Register"
+
 
 // export const register = abc => {
 //     return axios.post('http://localhost:8080/auth/register', {

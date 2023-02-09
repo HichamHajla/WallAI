@@ -6,6 +6,7 @@ import Loader from "../components/Loader";
 import Card from "../components/Card";
 import axios from "axios";
 
+
 const RenderCards = ({ data, title }) => {
   if (data?.length > 0) {
     return data.map((post) => <Card key={post._id} {...post} />);
@@ -37,25 +38,14 @@ const Profile = () => {
     setLoading(true);
     try {
       const details = JSON.parse(localStorage.getItem("details")) || {};
-      const response = await fetch(
-        `http://localhost:8080/api/post/user/${details._id}`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      if (response.ok) {
-        const result = await response.json();
-        setAllPosts(result.data.reverse());
-      }
+      const response = await axios.get(`http://localhost:8080/api/post/user/${details._id}`);
+      setAllPosts(response.data.data.reverse());
     } catch (error) {
       alert(error);
     } finally {
       setLoading(false);
     }
-  };
+};
 
   const handleSearch = (e) => {
     clearTimeout(searchTimeout);
@@ -298,4 +288,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Profile
