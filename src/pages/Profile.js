@@ -38,7 +38,7 @@ const Profile = () => {
     setLoading(true);
     try {
       const details = JSON.parse(localStorage.getItem("details")) || {};
-      const response = await axios.get(`http://localhost:8080/api/post/user/${details._id}`);
+      const response = await axios.get(`https://wall-ai.fly.dev/api/post/user/${details._id}`);
       setAllPosts(response.data.data.reverse());
     } catch (error) {
       alert(error);
@@ -87,7 +87,7 @@ const Profile = () => {
     formData.append("image", profile.image);
 
     axios
-      .put(`http://localhost:8080/api/users/${details._id}`, formData, {
+      .put(`https://wall-ai.fly.dev/api/users/${details._id}`, formData, {
         headers: {
           "content-type": "multipart/form-data",
         },
@@ -99,7 +99,7 @@ const Profile = () => {
     setLoading(true);
 
     await axios
-      .get(`http://localhost:8080/api/users/${details._id}`)
+      .get(`https://wall-ai.fly.dev/api/users/${details._id}`)
       .then((res) => setUser(res.data))
       .then(setLoading(false));
   };
@@ -143,7 +143,7 @@ const Profile = () => {
           <div className="grid lg:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1 grid-cols-1 gap-8">
             <div>
               <img
-                src={`http://localhost:8080${user.image}`}
+                src={`https://wall-ai.fly.dev${user.image}`}
                 alt="logo"
                 className="w-40 h-80 rounded-full object-cover sm:w-auto mt-4 mb-4 container mx-auto border-4 border-black"
               />

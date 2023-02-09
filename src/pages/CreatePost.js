@@ -24,7 +24,7 @@ const CreatePost = () => {
     if(form.prompt) {
       try{
         setGeneratingImg(true);
-        const response = await fetch('http://localhost:8080/api/wall', {
+        const response = await fetch('https://wall-ai.fly.dev/api/wall', {
           method: 'POST', 
           headers: {
             'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ const CreatePost = () => {
       setLoading(true);
 
       try{
-        const response = await fetch('http://localhost:8080/api/post',{
+        const response = await fetch('https://wall-ai.fly.dev/api/post',{
           method:'POST',
           headers:{
             'Content-Type':'application/json'

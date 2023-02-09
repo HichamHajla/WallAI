@@ -14,7 +14,7 @@ const Comment = ({post}) => {
       }; 
     
     const getComments = async () => {
-       post._id &&  await axios.get(`http://localhost:8080/api/comment/post/${post._id}`) 
+       post._id &&  await axios.get(`https://wall-ai.fly.dev/api/comment/post/${post._id}`) 
         .then(res => setComments(res.data.data))
           .catch(error => console.error(error))
           .finally(() => setLoading(false));
@@ -29,7 +29,7 @@ const Comment = ({post}) => {
         userId: details._id, 
         postId: post._id}
     try {
-      const response = await axios.post("http://localhost:8080/api/comment", newCom);
+      const response = await axios.post("https://wall-ai.fly.dev/api/comment", newCom);
 
       setComments([...comments, response.data]);
       setAuthor("");
@@ -45,7 +45,7 @@ const Comment = ({post}) => {
       }, [post._id])  
 
       const deleteComment = async (idComment) => {
-        axios.delete(`http://localhost:8080/api/comment/${idComment}`)
+        axios.delete(`https://wall-ai.fly.dev/api/comment/${idComment}`)
         .then(() => {
           setComments(prevComments => prevComments.filter(comment => comment._id !== idComment));
         });

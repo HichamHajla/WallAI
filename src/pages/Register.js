@@ -27,7 +27,7 @@ const Register = () => {
       // newUser.append('image', image)
     
     const register = abc => {
-        return axios.post('http://localhost:8080/auth/register', newUser, {
+        return axios.post('https://wall-ai.fly.dev/auth/register', newUser, {
           headers : {
             'content-type' : 'multipart/form-data'
           }

@@ -15,7 +15,7 @@ import axios from 'axios'
 // }
 
 export const login = user => {
-    return axios.post('http://localhost:8080/auth/login', {
+    return axios.post('https://wall-ai.fly.dev/auth/login', {
         email : user.email,
         password : user.password
     })

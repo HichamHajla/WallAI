@@ -19,7 +19,7 @@ const PostDetails = () => {
     const fetchPost = async () => {
         setLoading(true);
        
-         await axios.get(`http://localhost:8080/api/post/${_id}`)
+         await axios.get(`https://wall-ai.fly.dev/api/post/${_id}`)
           .then(res => (setPost(res.data.data)))  
           .then(setLoading(false))
       };
@@ -27,7 +27,7 @@ const PostDetails = () => {
       const fetchUser = async () => {
         setLoading(true);
        
-           await axios.get(`http://localhost:8080/api/users/${post.userId}`)
+           await axios.get(`https://wall-ai.fly.dev/api/users/${post.userId}`)
           .then(res => (setUser(res.data)))
           .then(setLoading(false))
       };
@@ -41,7 +41,7 @@ const PostDetails = () => {
       }, [post])
 
       const deletePost = async (_id) => {
-        axios.delete(`http://localhost:8080/api/post/${_id}`)
+        axios.delete(`https://wall-ai.fly.dev/api/post/${_id}`)
         .then(navigate('/home'))
         .then(console.log(_id))
       }
@@ -61,7 +61,7 @@ const PostDetails = () => {
       <div className="flex flex-col"> 
         <h1 className='font-extrabold text-[#666e75] text-[20px]'>Posted by :</h1>
         <div className="flex justify-center items-center" >
-         { user.image && <img className="w-16 h-16 rounded-full object-cover flex justify-center items-center m-4" src={`http://localhost:8080${user.image}`} alt="profil"/>}
+         { user.image && <img className="w-16 h-16 rounded-full object-cover flex justify-center items-center m-4" src={`https://wall-ai.fly.dev${user.image}`} alt="profil"/>}
         <p className='font-extrabold text-[#222328] text-[32px]'>{post.name}</p>
         </div>
         <h3 className='mt-2 text-[#666e75] text-[20px] max-w[500px]'>{post.prompt}</h3>
