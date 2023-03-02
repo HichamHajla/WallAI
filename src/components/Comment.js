@@ -58,14 +58,16 @@ const Comment = ({post}) => {
     <div> 
     {comments && comments.map(e => {
         return(
-        <div className="mb-2" key={e._id}>
-        <h2 className='font-extrabold text-[#222328] text-[20px] text-left'>{e.comment}</h2>
-        <h2 className='text-[#666e75] text-left'>By : {e.author}<span className='text-[#666e75] text-[12px]'> {new Date(e.date).toLocaleString()}</span> </h2>
+        <div className="mb-2 border-b border-b-black" key={e._id}>
+        <h2 className='font-extrabold text-[#222328] text-[20px] text-left mt-4'>{e.comment}</h2>
+        <div className='flex flex-col lg:flex-row  justify-between'>
+        <h2 className='text-[#666e75] text-left mt-4 mb-4'>By : {e.author}<span className='text-[#666e75] text-[12px]'> {new Date(e.date).toLocaleString()}</span> </h2>
         {e.userId === details._id && <button className="mb-2 text-white bg-[#ff0000] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center" onClick={() => deleteComment(e._id)}>Delete</button>}
+        </div>
         </div> 
         )})}
     </div>  
-    <div className='mt-4'>
+    <div className='mt-6'>
     <form onSubmit={handleSubmit}>
         <h1 className="text-left">Add a Comment</h1>
         <input

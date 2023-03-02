@@ -61,7 +61,7 @@ const PostDetails = () => {
       <div className="flex flex-col"> 
         <h1 className='font-extrabold text-[#666e75] text-[20px]'>Posted by :</h1>
         <div className="flex justify-center items-center" >
-         { user.image && <img className="w-16 h-16 rounded-full object-cover flex justify-center items-center m-4" src={`https://wall-ai.fly.dev${user.image}`} alt="profil"/>}
+         { user.image && <img className="w-24 h-24 rounded-full object-cover flex justify-center items-center m-4 border-2 border shadow-2xl" src={`https://wall-ai.fly.dev${user.image}`} alt="profil"/>}
         <p className='font-extrabold text-[#222328] text-[32px]'>{post.name}</p>
         </div>
         <h3 className='mt-2 text-[#666e75] text-[20px] max-w[500px]'>{post.prompt}</h3>

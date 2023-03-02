@@ -109,7 +109,6 @@ const Profile = () => {
     fetchUser();
   }, [])
 
-  console.log(profile.image);
 
   return (
     <>
@@ -138,28 +137,28 @@ const Profile = () => {
       <div className="sm:p-8 px-4 py-8 w-full bg-[#f9fafe] min-h-[calc(100vh-73px)]">
         <section className="max-w-7xl mx-auto">
           <h1 className="font-extrabold text-[#222328] text-[36px] text-center mt-2 mb-4">
-            Your Personal Wall
+            My Personal Wall
           </h1>
           <div className="grid lg:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1 grid-cols-1 gap-8">
             <div>
               <img
                 src={`https://wall-ai.fly.dev${user.image}`}
                 alt="logo"
-                className="w-40 h-80 rounded-full object-cover sm:w-auto mt-4 mb-4 container mx-auto border-4 border-black"
+                className="w-80 h-80 rounded-full object-cover mt-4 mb-4 container mx-auto border-2 border shadow-2xl"
               />
             </div>
             <div className="flex flex-col mt-4 mb-4">
               <h1 className=" font-extrabold uppercase text-[#4649ff] text-[32px] mt-8">
                 {user.username}
               </h1>
-              <p className="mt-2 text-[#666e75] text-[16px] max-w[500px]">
+              <h2 className="font-bold text-[#222328] text-[24px] mt-2">
+                {user.first_name} {user.last_name}
+              </h2>
+              <p className="mt-2 text-[#666e75] text-[20px] max-w[500px]">
                 Co-founder and CEO of Wall-AI © <br/>
                 Show us your imagination and creativity !
               </p>
-              <h2 className="font-bold text-[#222328] text-[24px] mt-6">
-                {user.first_name} {user.last_name}
-              </h2>
-              <h2 className="font-bold text-[#222328] text-[24px] mt-4">
+              <h2 className="font-bold text-[#666e75] text-[20px] mt-4">
                 {user.email}
               </h2>
             </div>
