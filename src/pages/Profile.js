@@ -34,6 +34,9 @@ const Profile = () => {
     email: user.email,
   });
 
+  console.log(details)
+  
+
   const fetchPosts = async () => {
     setLoading(true);
     try {
@@ -109,6 +112,7 @@ const Profile = () => {
     fetchUser();
   }, [])
 
+  console.log(user)
 
   return (
     <>
@@ -142,24 +146,24 @@ const Profile = () => {
           <div className="grid lg:grid-cols-2 sm:grid-cols-2 xs:grid-cols-1 grid-cols-1 gap-8">
             <div>
               <img
-                src={`https://wall-ai.fly.dev${user.image}`}
+                src={`https://wall-ai.fly.dev${details.image}`}
                 alt="logo"
                 className="w-80 h-80 rounded-full object-cover mt-4 mb-4 container mx-auto border-2 border shadow-2xl"
               />
             </div>
             <div className="flex flex-col mt-4 mb-4">
               <h1 className=" font-extrabold uppercase text-[#4649ff] text-[32px] mt-8">
-                {user.username}
+                {details.username}
               </h1>
               <h2 className="font-bold text-[#222328] text-[24px] mt-2">
-                {user.first_name} {user.last_name}
+                {details.first_name} {details.last_name}
               </h2>
               <p className="mt-2 text-[#666e75] text-[20px] max-w[500px]">
                 Co-founder and CEO of Wall-AI © <br/>
                 Show us your imagination and creativity !
               </p>
               <h2 className="font-bold text-[#666e75] text-[20px] mt-4">
-                {user.email}
+                {details.email}
               </h2>
             </div>
             </div>
